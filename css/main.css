@@ -303,29 +303,41 @@ background-color: rgba(115, 99, 87, 0.7);
 /*dim the background*/
 display: none; }
 
+
+
+
 figure.desktop {
-position: relative;
-max-width: 600px;
-/*padding: 2% 6.58333% 0 6.58333%;*/
-padding: 24px 79px 0 79px;
+    max-width: 640px;
 }
-figure.desktop:before {
-content: "";
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-background-image: url(img/macbook-outline.png);
-background-repeat: no-repeat;
-background-size: contain;
-z-index: 2;
+figure.desktop .wrapper {
+	position: relative;
+	padding-bottom: 57.833333%;
+	height: 0;
+    overflow: visible;
+}
+figure.desktop .wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(img/macbook-outline.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+}
+figure.desktop .img-wrapper {
+    position: absolute;
+	top: 7%;
+	left: 13.16667%;
+    right: 13.16667%;
+	width: 73.66667%;
+	height: 100%;
 }
 figure.desktop img {
-max-width: 100%;
+    max-width: 100%;
 }
-
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
