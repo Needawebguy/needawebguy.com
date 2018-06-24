@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -22,13 +22,13 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
-    <header>
+    <header class="site-header">
         <p><a href="/">needawebguy.com</a></p>
         <div class="banner">
             <img src="/img/avatar.png" alt="Photo of me"/>
-            <h1><span class="name"><span class="text">Albert John Penticoss</span></span> <span class="occupation"><span class="text">Web Designer</span></span></h1>
+            {% if page.layout == "portfolio" %}<h1>{% else %}<p class="site-heading">{% endif %}<span class="name"><span class="text">Albert John Penticoss</span></span> <span class="occupation"><span class="text">Web Designer</span></span>{% if page.layout == "portfolio" %}</h1>{% else %}</p>{% endif %}
         </div>
-        <nav>
+        <nav class="main-nav">
             <a class="menu-toggle ir" href="#">Menu</a>
             {% include main-nav.html %}
         </nav>
