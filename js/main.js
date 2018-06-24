@@ -34,3 +34,11 @@ $(document).ready(function() {
     Barba.Prefetch.init();
     Barba.Pjax.start();
 });
+$(window).scroll(function() {
+    if( $(this).scrollTop() > 250 )  {
+        $('.scroll-nav').addClass('show');
+    } 
+    else {
+        $('.scroll-nav').removeClass('show');
+    }
+});

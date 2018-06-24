@@ -1,10 +1,12 @@
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
+
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -30,7 +32,6 @@ html {
     background: #b3d4fc;
     text-shadow: none;
 }
-
 ::selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -96,21 +97,22 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-    
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
     box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
 body {
     font-family: 'Roboto Slab', serif;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     background: #f1f1f1;
 }
-
 figure {
     margin-left: 0;
     margin-right: 0;
@@ -122,31 +124,34 @@ header {
     max-width: 1140px;
     margin: 0 auto;
 }
-header h1, header p {
+header h1,
+header p,
+.scroll-nav p {
     font-size: 1.125em;
     font-weight: 300;
     color: #736357;
 }
-header a {
+header a,
+.scroll-nav a {
     text-decoration: none;
-    color: #736357; 
+    color: #736357;
 }
 header > p {
     width: 100%;
     margin: 1em 0;
 }
 header .banner {
-    margin: 1em 0; 
+    margin: 1em 0;
 }
 header h1 {
-    margin: -40px 0 0 0; 
+    margin: -40px 0 0 0;
 }
 header span {
     position: relative;
     display: inline-block;
     width: 149px;
     height: 149px;
-    vertical-align: middle; 
+    vertical-align: middle;
 }
 header span span.text {
     position: absolute;
@@ -155,47 +160,44 @@ header span span.text {
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0; 
+    right: 0;
 }
 header span.name {
     background: #91f6c4;
-    border-radius: 75px; 
+    border-radius: 75px;
 }
 header span.name span.text {
     width: 80%;
-    height: 2.8em; 
+    height: 2.8em;
 }
 header span.occupation {
     border: 2px solid #91f6c4;
     border-radius: 74px;
-    margin-left: -20px; 
+    margin-left: -20px;
 }
 header span.occupation span.text {
     width: 60%;
-    height: 2.8em; 
+    height: 2.8em;
 }
 @media only screen and (min-width: 35em) {
     header .banner {
-        margin: 4em 0; 
+        margin: 4em 0;
     }
     header .banner img {
-        margin: 0 -20px 0 0; 
+        margin: 0 -20px 0 0;
     }
     header h1 {
         display: inline-block;
-        margin: 0; }
+        margin: 0;
+    }
 }
 main {
-position: relative;
-max-width: 1140px;
-margin: 0 auto;
-padding: 2em 1em 0 1em; }
-
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2em 1em 0 1em;
+}
 nav {
-    /*z-index: 1000;
-    text-align: left;
-    position: fixed;
-    right: 0;*/
     border-bottom: 1px solid #999;
     border-top: 1px solid #999;
     margin: 1em 0;
@@ -209,37 +211,67 @@ nav .menu-toggle {
     background-image: url(img/hamburger-menu@2x.png);
     background-size: 24px 24px;
     background-position: center center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 }
-nav ul {
+nav ul,
+.scroll-nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    /*margin: 0 0 0 48px;
-    background: #91f6c4;
-    width: 200px;*/
-
 }
-nav ul li {
+nav ul li,
+.scroll-nav ul li {
     display: inline-block;
     padding: 1em 0;
-    font-weight: 300; 
+    font-weight: 300;
 }
 nav ul li a {
-    /*display: block;*/
     padding: 1em 20px;
 }
-nav ul li a:hover {
-    background: #91f6c4; 
+nav ul li a:hover,
+.scroll-nav ul li a:hover {
+    background: #91f6c4;
 }
-nav ul li a.current {
+nav ul li a.current,
+.scroll-nav ul li a.current {
     background: none;
     color: #736357;
     border-bottom: 2px solid #736357;
 }
+.scroll-nav {
+    background: #f1f1f1;
+    position: fixed;
+    
+    top: -100px;
+    width: 100%;
+    box-shadow: 0 2px #ddd;
+    transition: top 1s ease;
+}
+.scroll-nav.show {
+    
+    top: 0px;
+}
+.scroll-nav > div {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.scroll-nav p {
+    display: inline-block;
+}
+.scroll-nav ul {
+    display: inline-block;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+.scroll-nav ul li a {
+    padding: 0.5em 10px;
+}
 
 article {
-clear: both; }
+    clear: both;
+}
 article h2 {
     text-align: center;
     letter-spacing: 3px;
@@ -248,71 +280,77 @@ article h2 {
     font-weight: 300;
     /*font-size: 3em;
     color: #91f6c4;
-    text-shadow: 2px 2px 0 #2fee8f;*/ }
-
+    text-shadow: 2px 2px 0 #2fee8f;*/
+}
 .button {
-cursor: pointer;
-text-decoration: none;
-display: inline-block;
-background: #91f6c4;
-border-radius: 3px;
-box-shadow: 0px 3px 0px 0px #2fee8f;
-font-size: 0.75em;
-color: #736357;
-padding: 8px 8px; }
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    background: #91f6c4;
+    border-radius: 3px;
+    box-shadow: 0px 3px 0px 0px #2fee8f;
+    font-size: 0.75em;
+    color: #736357;
+    padding: 8px 8px;
+}
 .button:hover {
-    background: #b4f9d6; }
+    background: #b4f9d6;
+}
 .button:active {
-    box-shadow: 0px 3px 0px 0px #b4f9d6; }
-
+    box-shadow: 0px 3px 0px 0px #b4f9d6;
+}
 .prev {
-left: 0;
-padding-left: 24px;
-background-image: url(img/exit-man-left@2x.png);
-background-position: left center;
-background-size: 20px 30px;
-background-repeat: no-repeat; }
-
+    left: 0;
+    padding-left: 24px;
+    background-image: url(img/exit-man-left@2x.png);
+    background-position: left center;
+    background-size: 20px 30px;
+    background-repeat: no-repeat;
+}
 .next {
-right: 0;
-padding-right: 24px;
-background-image: url(img/exit-man-right@2x.png);
-background-position: right center;
-background-size: 20px 30px;
-background-repeat: no-repeat; }
-
-.prev, .next {
-display: inline-block;
-position: absolute;
-top: 0; }
-.prev.disabled, .next.disabled {
-    opacity: 0.4; }
-    .prev.disabled .button, .next.disabled .button {
-    cursor: default; }
-    .prev.disabled .button:hover, .next.disabled .button:hover {
-        background: #91f6c4; }
-
+    right: 0;
+    padding-right: 24px;
+    background-image: url(img/exit-man-right@2x.png);
+    background-position: right center;
+    background-size: 20px 30px;
+    background-repeat: no-repeat;
+}
+.prev,
+.next {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+.prev.disabled,
+.next.disabled {
+    opacity: 0.4;
+}
+.prev.disabled .button,
+.next.disabled .button {
+    cursor: default;
+}
+.prev.disabled .button:hover,
+.next.disabled .button:hover {
+    background: #91f6c4;
+}
 .overlay {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 10;
-background-color: rgba(115, 99, 87, 0.7);
-/*dim the background*/
-display: none; }
-
-
-
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(115, 99, 87, 0.7);
+    /*dim the background*/
+    display: none;
+}
 figure.desktop {
     max-width: 640px;
 }
 figure.desktop .wrapper {
-	position: relative;
-	padding-bottom: 57.833333%;
-	height: 0;
+    position: relative;
+    padding-bottom: 57.833333%;
+    height: 0;
     overflow: visible;
 }
 figure.desktop .wrapper:before {
@@ -329,33 +367,38 @@ figure.desktop .wrapper:before {
 }
 figure.desktop .img-wrapper {
     position: absolute;
-	top: 7%;
-	left: 13.16667%;
+    top: 7%;
+    left: 13.16667%;
     right: 13.16667%;
-	width: 73.66667%;
-	height: 100%;
+    width: 73.66667%;
+    height: 100%;
 }
 figure.desktop img {
     max-width: 100%;
 }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+
 /*
  * Image replacement
  */
- .ir {
+
+.ir {
     background-color: transparent;
     border: 0;
     overflow: hidden;
     /* IE 6/7 fallback */
-    *text-indent: -9999px; }
-  
-  .ir:before {
+    *text-indent: -9999px;
+}
+.ir:before {
     content: "";
     display: block;
     width: 0;
-    height: 150%; }
+    height: 150%;
+}
 
 /*
  * Hide visually and from screen readers
@@ -383,7 +426,8 @@ figure.desktop img {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
 
 /*
@@ -425,10 +469,11 @@ figure.desktop img {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
-
 .clearfix:after {
     clear: both;
 }
@@ -442,11 +487,10 @@ figure.desktop img {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
-
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -461,35 +505,30 @@ figure.desktop img {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster */
+        color: #000 !important;
+        /* Black prints faster */
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre {
         white-space: pre-wrap !important;
     }
@@ -498,28 +537,23 @@ figure.desktop img {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;
