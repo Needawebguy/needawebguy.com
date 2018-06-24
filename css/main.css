@@ -117,10 +117,14 @@ figure {
     margin-left: 0;
     margin-right: 0;
 }
+p {
+    font-weight: 300;
+    color: #736357;
+}
 
 header {
     text-align: center;
-    padding: 0 1em;
+    padding: 0 10px;
     max-width: 1140px;
     margin: 0 auto;
 }
@@ -193,9 +197,9 @@ header span.occupation span.text {
 }
 main {
     position: relative;
-    max-width: 1140px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 2em 1em 0 1em;
+    padding: 2em 10px 0 10px;
 }
 nav {
     border-bottom: 1px solid #999;
@@ -241,20 +245,20 @@ nav ul li a.current,
 .scroll-nav {
     background: #f1f1f1;
     position: fixed;
-    
+    z-index: 999;
     top: -100px;
     width: 100%;
     box-shadow: 0 2px #ddd;
     transition: top 1s ease;
 }
 .scroll-nav.show {
-    
     top: 0px;
 }
 .scroll-nav > div {
     position: relative;
     max-width: 1140px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 .scroll-nav p {
     display: inline-block;
@@ -263,25 +267,12 @@ nav ul li a.current,
     display: inline-block;
     text-align: right;
     position: absolute;
-    right: 0;
+    right: 1em;
 }
 .scroll-nav ul li a {
     padding: 0.5em 10px;
 }
 
-article {
-    clear: both;
-}
-article h2 {
-    text-align: center;
-    letter-spacing: 3px;
-    color: #736357;
-    margin-bottom: 2em;
-    font-weight: 300;
-    /*font-size: 3em;
-    color: #91f6c4;
-    text-shadow: 2px 2px 0 #2fee8f;*/
-}
 .button {
     cursor: pointer;
     text-decoration: none;
@@ -290,6 +281,7 @@ article h2 {
     border-radius: 3px;
     box-shadow: 0px 3px 0px 0px #2fee8f;
     font-size: 0.75em;
+    font-weight: 400;
     color: #736357;
     padding: 8px 8px;
 }
@@ -298,6 +290,9 @@ article h2 {
 }
 .button:active {
     box-shadow: 0px 3px 0px 0px #b4f9d6;
+}
+.button.goto:after {
+    content: " \2197";
 }
 .prev {
     left: 0;
@@ -344,38 +339,129 @@ article h2 {
     /*dim the background*/
     display: none;
 }
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+}
+article h2 {
+    text-align: center;
+    letter-spacing: 3px;
+    color: #736357;
+    margin: 3em 0 1em 0;
+    font-weight: 300;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: end;
+}
+@media screen and (min-width: 1000px) {
+    article h2 {
+        font-size: 1.5em;
+        margin: 2em 0;
+    }
+}
 figure.desktop {
-    max-width: 640px;
+    grid-row: 2 / end;
+    grid-column-start: 1;
+    grid-column-end: end;
 }
-figure.desktop .wrapper {
+figure.mobile {
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.description {
+    grid-row: 3;
+    grid-column-start: 2;
+    grid-column-end: end;
+}    
+
+@media screen and (min-width: 640px) {
+    article {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    figure.desktop {
+        grid-row: 2 / end;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    figure.mobile {
+        grid-row: 2;
+        grid-column-start: 4;
+        grid-column-end: 5;
+    }
+    .description {
+        grid-row: 3;
+        grid-column-start: 4;
+        grid-column-end: end;
+    }
+}
+
+figure.desktop,
+figure.mobile {
     position: relative;
-    padding-bottom: 57.833333%;
     height: 0;
-    overflow: visible;
 }
-figure.desktop .wrapper:before {
+figure.desktop {
+    padding-bottom: 57.833333%; /* height/width macbook-outline.png */
+}
+figure.mobile {
+    padding-bottom: 207.25%; /* height/width iphone-outline.png */
+    overflow: hidden;
+}
+figure.desktop:before,
+figure.mobile:before {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url(img/macbook-outline.png);
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 2;
+}
+figure.desktop:before {
+    background-image: url(img/macbook-outline.png);
+}
+figure.mobile:before {
+    background-image: url(img/iphone-outline.png);
+}
+figure.desktop .img-wrapper,
+figure.mobile .img-wrapper {
+    position: absolute;
 }
 figure.desktop .img-wrapper {
     position: absolute;
     top: 7%;
     left: 13.16667%;
     right: 13.16667%;
-    width: 73.66667%;
-    height: 100%;
+    bottom: 12.75%;
+    overflow: hidden;
 }
-figure.desktop img {
+@media screen and (min-width: 640px) {
+    figure.desktop .img-wrapper {
+        overflow: visible;
+    }
+}
+figure.mobile .img-wrapper {
+    position: absolute;
+    top: 14.75%;
+    left: 9.5%;
+    right: 9%;
+    bottom: 15%;
+    overflow: hidden;
+}
+figure.desktop img,
+figure.mobile img {
     max-width: 100%;
+    border: 1px solid #ddd;
 }
+
+
 
 /* ==========================================================================
    Helper classes
