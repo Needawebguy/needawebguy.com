@@ -113,12 +113,13 @@ body {
     font-family: 'Roboto slab', serif;
     overflow-x: hidden;
     background: #f1f1f1;
+    color: #736357;
 }
 h1 {
     font-weight: 300;
     color: #736357;
 }
-p {
+p, li {
     font-weight: 300;
     color: #736357;
 }
@@ -388,6 +389,9 @@ article h2 {
     grid-row: 1;
     grid-column-start: 1;
     grid-column-end: end;
+}
+article p {
+    line-height: 1.6;
 }
 @media screen and (min-width: 1000px) {
     article h2 {
