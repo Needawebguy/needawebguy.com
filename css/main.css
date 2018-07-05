@@ -453,7 +453,7 @@ article > h2 {
     -ms-grid-column: 1;
     grid-column-start: 1;
     -ms-grid-column-span: NaN;
-    grid-column-end: end;
+    grid-column-end: -1;
 }
 .span1 {
     grid-column: span 1;
@@ -472,14 +472,14 @@ article > h2 {
     -ms-grid-column: 1;
     grid-column-start: 1;
     -ms-grid-column-span: NaN;
-    grid-column-end: end;
+    grid-column-end: -1;
 }
 
 .mobile-and-descrition {
     -ms-grid-column: 1;
     grid-column-start: 1;
     -ms-grid-column-span: NaN;
-    grid-column-end: end;
+    grid-column-end: -1;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -496,7 +496,7 @@ article > h2 {
     -ms-grid-column: 2;
     grid-column-start: 2;
     -ms-grid-column-span: NaN;
-    grid-column-end: end;
+    grid-column-end: -1;
 }
 @media screen and (min-width: 640px) {
     article {
@@ -530,14 +530,14 @@ article > h2 {
         -ms-grid-column: 1;
         grid-column-start: 1;
         -ms-grid-column-span: NaN;
-        grid-column-end: end;
+        grid-column-end: -1;
     }
 
     .mobile-and-descrition {
         -ms-grid-column: 4;
         grid-column-start: 4;
         -ms-grid-column-span: NaN;
-        grid-column-end: end;
+        grid-column-end: -1;
         display: -ms-grid;
         display: grid;
         -ms-grid-columns: 1fr 1fr;
@@ -553,7 +553,7 @@ article > h2 {
         -ms-grid-column: 1;
         grid-column-start: 1;
         -ms-grid-column-span: NaN;
-        grid-column-end: end;
+        grid-column-end: -1;
     }
 
     .body {
