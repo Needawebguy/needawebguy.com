@@ -1,16 +1,16 @@
 {% include head.html %}
-<main  id="barba-wrapper" role="main">
+<main  id="barba-wrapper">
     <div class="barba-container">
         <div class="portfolio-nav">
             {% if page.prevProject == "none" %}
-            <span class="prev disabled"><span class="button" href="">last project</span></span>
+            <span class="prev disabled"><span class="button">last project</span></span>
             {% elsif page.prevProject == "index.html" %}
             <span class="prev"><a class="button" href="/">last project</a></span>
             {% else %}
             <span class="prev"><a class="button" href="/portfolio/{{ page.prevProject }}">last project</a></span>
             {% endif %}
             {% if page.nextProject == "none" %}
-            <span class="next disabled"><span class="button" href="">next project</span></span>
+            <span class="next disabled"><span class="button">next project</span></span>
             {% else %}
             <span class="next"><a class="button" href="/portfolio/{{ page.nextProject }}">next project</a></span>
             {% endif %}
