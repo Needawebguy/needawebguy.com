@@ -1,5 +1,4 @@
 baseurl:
-
 defaults:
   -
     scope:
@@ -7,3 +6,4 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+permalink: pretty
