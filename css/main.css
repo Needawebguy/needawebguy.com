@@ -360,6 +360,8 @@ img {
 /* portfolio nav */
 .portfolio-nav {
     position: relative;
+    position: sticky;
+    top: 80px;
     max-width: 1400px;
     margin: 0 auto;
 }
